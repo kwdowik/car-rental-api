@@ -1,0 +1,19 @@
+{
+  "name": "car-rental-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwdowik/car-rental-api.git"
+  },
+  "author": "kwdowik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwdowik/car-rental-api/issues"
+  },
+  "homepage": "https://github.com/kwdowik/car-rental-api#readme"
+}
