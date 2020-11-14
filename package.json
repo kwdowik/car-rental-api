@@ -18,14 +18,19 @@
     "@shelf/jest-mongodb": "^1.2.3",
     "babel-jest": "^24.4.0",
     "dotenv": "^6.2.0",
-    "faker": "^4.1.0",
+    "faker": "^5.1.0",
     "jest": "^24.3.1",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3"
   },
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "preflight": ". ./scripts/preflight.sh",
+    "build": "npm run clean && babel src -d dist",
+    "clean": "rimraf dist",
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "preset": "@shelf/jest-mongodb",
