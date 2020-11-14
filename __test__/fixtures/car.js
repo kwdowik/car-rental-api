@@ -7,20 +7,20 @@ const Id = Object.freeze({
   isValidId: cuid.isCuid
 })
 
-function md5 (text) {
+const md5 = (text) => {
   return crypto
     .createHash('md5')
     .update(text, 'utf-8')
     .digest('hex')
 }
 
-export default function makeFakeCar (overrides) {
+const makeFakeCar = (overrides) => {
   const car = {
     id: Id.makeId(),
     model: faker.vehicle.model(),
     price: faker.random.number({ min: 30, max: 200, precision: 1 }),
     available: faker.random.boolean(),
-    category: [ faker.random.arrayElements(['normal', 'hybrid', 'eletric' ,'premium'])]
+    category: faker.random.arrayElements(['normal', 'hybrid', 'eletric' ,'premium'])
   }
 
   car.hash = md5(
@@ -34,3 +34,5 @@ export default function makeFakeCar (overrides) {
     ...overrides
   }
 }
+
+export default makeFakeCar;
