@@ -1,4 +1,4 @@
-NAME=kwdowik/score-api
+NAME=kwdowik/car-rental-api
 TAG=$(git log -1 --pretty=%h)
 IMG=${NAME}:${TAG}
 LATEST=${NAME}:latest
