@@ -5,6 +5,8 @@ import seedDb from './seeder'
 const MongoClient = mongodb.MongoClient;
 const url = process.env.DB_URL;
 const dbName = process.env.DB_NAME;
+console.log('db_url: ' + url);
+console.log('db_name: ' + dbName);
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 export async function makeDb () {

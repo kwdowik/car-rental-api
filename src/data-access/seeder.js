@@ -1,4 +1,5 @@
 import faker from 'faker';
+import cuid from 'cuid'
 
 const seedCarsDb = async ({ carsDb, amount }) => {
   const cars = await carsDb.findAll();
@@ -7,7 +8,7 @@ const seedCarsDb = async ({ carsDb, amount }) => {
   }
   for (let i = 0; i <= amount; i++) {
     const car = {
-      id: Id.makeId(),
+      id: cuid(),
       model: faker.vehicle.model(),
       price: faker.random.number({ min: 30, max: 200, precision: 1 }),
       available: faker.random.boolean(),
