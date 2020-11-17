@@ -3,7 +3,7 @@ const MongoClient = mongodb.MongoClient
 
 let connection, db
 
-export default async function makeDb () {
+ const makeDb = async() => {
   connection = connection ||
     await MongoClient.connect(
       global.__MONGO_URI__,
@@ -18,9 +18,10 @@ export async function closeDb () {
 }
 
 export async function clearDb () {
-  await db.collection('scores').deleteMany({})
-  await db.collection('teams').deleteMany({})
+  await db.collection('cars').deleteMany({})
   return true
 }
 
 export { connection, db }
+
+export default makeDb;
